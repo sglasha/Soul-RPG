@@ -5,9 +5,9 @@
 
 [node name="Test Scene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_hne3r")]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(133, 121.5)
 scale = Vector2(3.078125, 2.8984375)
 texture = ExtResource("2_hk461")
+
+[node name="Player" parent="." instance=ExtResource("1_hne3r")]

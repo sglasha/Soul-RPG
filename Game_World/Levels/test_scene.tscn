@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1yt7gev07stq"]
+[gd_scene load_steps=6 format=3 uid="uid://c1yt7gev07stq"]
 
 [ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/Scenes/player.tscn" id="1_hne3r"]
 [ext_resource type="Texture2D" uid="uid://djtuolfsqfna0" path="res://icon.svg" id="2_hk461"]
-[ext_resource type="Script" uid="uid://bg3i0tsqodu2b" path="res://Game_World/Entities/Enemies/Scripts/idle_movement.gd" id="2_yrjwy"]
+[ext_resource type="Script" uid="uid://bg3i0tsqodu2b" path="res://Game_World/Entities/Enemies/Scripts/entity_movement.gd" id="2_yrjwy"]
+[ext_resource type="Script" uid="uid://b23wjsss523ol" path="res://Game_World/Entities/Enemies/Scripts/facing.gd" id="4_lcr2e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcr2e"]
 
 [node name="Test Scene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_hne3r")]
+[node name="Player" parent="." groups=["chased"] instance=ExtResource("1_hne3r")]
 position = Vector2(-324, -5)
 
 [node name="Test Enemy" type="CharacterBody2D" parent="."]
@@ -20,4 +21,20 @@ scale = Vector2(3.078125, 2.8984375)
 texture = ExtResource("2_hk461")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test Enemy"]
+shape = SubResource("CircleShape2D_lcr2e")
+
+[node name="Vision" type="Node2D" parent="Test Enemy" node_paths=PackedStringArray("entity")]
+script = ExtResource("4_lcr2e")
+entity = NodePath("..")
+
+[node name="Test Enemy2" type="CharacterBody2D" parent="."]
+up_direction = Vector2(0, 1)
+script = ExtResource("2_yrjwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Test Enemy2"]
+position = Vector2(4, -7.0000014)
+scale = Vector2(3.078125, 2.8984375)
+texture = ExtResource("2_hk461")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test Enemy2"]
 shape = SubResource("CircleShape2D_lcr2e")

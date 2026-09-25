@@ -21,6 +21,10 @@ folder_colors={
 "res://Game_World/": "green"
 }
 
+[global_group]
+
+chased=""
+
 [input]
 
 up={

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://uc55xpygjs5b"]
+
+[ext_resource type="Script" uid="uid://beacvvvm7hij5" path="res://Game_World/Entities/Resources/Stats/Stats.gd" id="1_kmplr"]
+
+[resource]
+script = ExtResource("1_kmplr")
+metadata/_custom_type_script = "uid://beacvvvm7hij5"

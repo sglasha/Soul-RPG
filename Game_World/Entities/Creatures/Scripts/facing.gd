@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var entity : CharacterBody2D
-var fov = 80
+var fov = 100
 var detection_radius = 1000
 
 func _process(_delta: float) -> void:

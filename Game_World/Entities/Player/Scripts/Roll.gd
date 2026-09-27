@@ -3,7 +3,6 @@ extends Node2D
 @export var player : CharacterBody2D
 @export var roll_timer : Timer
 @export var cooldown : Timer
-@export var sprite : Sprite2D
 @export var roll_speed_multiplier = 2
 var rolling = false
 var direction = Vector2(0,0)
@@ -23,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	
 	if rolling:
 		player.velocity = player.speed * direction * roll_speed_multiplier
-		sprite.rotate(1)
 
 func _on_roll_timer_timeout() -> void:
 	rolling = false

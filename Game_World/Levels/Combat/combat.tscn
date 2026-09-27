@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://rqccns8lt5su"]
+
+[ext_resource type="AudioStream" uid="uid://c0j61otthm46l" path="res://Game_World/Levels/Combat/Audio/Battle_1.mp3" id="1_wep10"]
+
+[node name="combat" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_wep10")
+autoplay = true
+parameters/looping = true

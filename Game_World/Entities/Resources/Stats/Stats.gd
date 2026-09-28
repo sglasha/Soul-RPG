@@ -5,3 +5,4 @@ extends Resource
 @export var health = 10
 @export var texture : Texture2D
 @export var speed = 10
+@export var attacks = [Attack]

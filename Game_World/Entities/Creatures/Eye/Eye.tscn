@@ -1,32 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnsu5ft4s4lik"]
+[gd_scene load_steps=8 format=3 uid="uid://cnsu5ft4s4lik"]
 
-[ext_resource type="Texture2D" uid="uid://djtuolfsqfna0" path="res://icon.svg" id="1_7e0kx"]
 [ext_resource type="Script" uid="uid://bg3i0tsqodu2b" path="res://Game_World/Entities/Creatures/Scripts/entity_movement.gd" id="1_48y8w"]
+[ext_resource type="Texture2D" uid="uid://d261tmp0eh7pf" path="res://Game_World/Entities/Creatures/Eye/Assets/Eyeball.png" id="2_48y8w"]
 [ext_resource type="Script" uid="uid://b23wjsss523ol" path="res://Game_World/Entities/Creatures/Scripts/facing.gd" id="3_o3svs"]
+[ext_resource type="Script" uid="uid://b7rtl5qnjjw2e" path="res://Game_World/Entities/Creatures/Scripts/sprite_rotation.gd" id="4_o3svs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jh3x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3svs"]
+atlas = ExtResource("2_48y8w")
+region = Rect2(0, 0, 46, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_48y8w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7e0kx")
+"texture": SubResource("AtlasTexture_o3svs")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Creature" type="CharacterBody2D"]
+[node name="Creature" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_48y8w")
+sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2jh3x")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_48y8w")
 
 [node name="Vision" type="Node2D" parent="." node_paths=PackedStringArray("entity")]
 script = ExtResource("3_o3svs")
 entity = NodePath("..")
+
+[node name="Rotation" type="Node2D" parent="." node_paths=PackedStringArray("sprite", "creature")]
+script = ExtResource("4_o3svs")
+sprite = NodePath("../AnimatedSprite2D")
+creature = NodePath("..")

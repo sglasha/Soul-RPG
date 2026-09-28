@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1yt7gev07stq"]
 
-[ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/Scenes/player.tscn" id="1_hne3r"]
-[ext_resource type="PackedScene" uid="uid://cnsu5ft4s4lik" path="res://Game_World/Entities/Creatures/creature.tscn" id="2_hk461"]
+[ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/player.tscn" id="1_hne3r"]
+[ext_resource type="PackedScene" uid="uid://cnsu5ft4s4lik" path="res://Game_World/Entities/Creatures/Eye/Eye.tscn" id="2_hk461"]
 
 [node name="Test Scene" type="Node2D"]
 

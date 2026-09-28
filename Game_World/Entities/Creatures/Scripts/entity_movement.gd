@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var sprite : AnimatedSprite2D
+
 var noise = FastNoiseLite.new()
 var base_speed = 400
 var noise_speed = 2

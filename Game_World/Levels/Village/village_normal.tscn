@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://pnixelo0jpvu"]
+[gd_scene load_steps=4 format=3 uid="uid://pnixelo0jpvu"]
 
+[ext_resource type="Texture2D" uid="uid://bjuob0gs8q0gu" path="res://Game_World/Levels/Village/map_1.png" id="1_3ct8p"]
 [ext_resource type="AudioStream" uid="uid://bsx66smopxmx4" path="res://Game_World/Levels/Village/Audio/Town_Theme_1.mp3" id="1_c6yhe"]
-[ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/Scenes/player.tscn" id="2_3ct8p"]
+[ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/player.tscn" id="2_3ct8p"]
 
 [node name="village_normal" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_3ct8p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_c6yhe")
@@ -11,3 +16,4 @@ autoplay = true
 parameters/looping = true
 
 [node name="Player" parent="." instance=ExtResource("2_3ct8p")]
+position = Vector2(-2475, 717)

@@ -3,5 +3,5 @@ extends Resource
 
 @export var name = ""
 @export var proffession = ""
-@export var face = Texture2D
-@export var dialogue : Resource
+@export var face : Texture2D
+@export_file("*.txt") var dialogue : String

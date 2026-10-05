@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c6wjb2b40nk0h"]
+[gd_scene load_steps=51 format=3 uid="uid://c6wjb2b40nk0h"]
 
 [ext_resource type="Script" uid="uid://dnslxsc2alk6g" path="res://Game_World/Entities/Player/Scripts/Player_Movement.gd" id="1_5f37o"]
 [ext_resource type="Texture2D" uid="uid://djsj0vb1mk85r" path="res://Game_World/Entities/Player/Assets/Movement/IDLE_DOWN-Sheet.png" id="3_mx3fv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ut0g3rocop0" path="res://Game_World/Entities/Player/Assets/Movement/WALK_LEFT-Sheet.png" id="8_li0da"]
 [ext_resource type="Texture2D" uid="uid://b6qwt04fkdis" path="res://Game_World/Entities/Player/Assets/Movement/WALK_RIGHT-Sheet.png" id="9_xlv7l"]
 [ext_resource type="Texture2D" uid="uid://calgppfsuevh5" path="res://Game_World/Entities/Player/Assets/Movement/WALK_UP-Sheet.png" id="10_6p7ej"]
+[ext_resource type="PackedScene" uid="uid://vshjvvd8x02f" path="res://Game_World/Entities/NPCS/dialogue.tscn" id="11_jorsh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wxp0"]
 radius = 62.008064
@@ -245,7 +246,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle_Up",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -352,8 +353,15 @@ cooldown = NodePath("../../Timers/Roll_Cooldown")
 position = Vector2(1.9999999, -138.99998)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_0lnb7")
-animation = &"Walk_Up"
+animation = &"Idle_Up"
 autoplay = "Idle_Down"
+
+[node name="Dialogue" parent="." instance=ExtResource("11_jorsh")]
+visible = false
+offset_left = -21.0
+offset_top = 11.0
+offset_right = -21.0
+offset_bottom = 11.0
 
 [connection signal="timeout" from="Timers/Roll_Timer" to="Abilities/Roll" method="_on_roll_timer_timeout"]
 [connection signal="timeout" from="Timers/Roll_Cooldown" to="Abilities/Roll" method="_on_roll_cooldown_timeout"]

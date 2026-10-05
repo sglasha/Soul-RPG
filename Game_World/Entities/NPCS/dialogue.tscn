@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://vshjvvd8x02f"]
+
+[ext_resource type="Script" uid="uid://bfa5q7l6h4trl" path="res://Game_World/Entities/NPCS/Scripts/dialogue_reader_NPC.gd" id="1_gxcoq"]
+[ext_resource type="FontFile" uid="uid://buofmrlba84wh" path="res://Fonts/kiwisoda/KiwiSoda.ttf" id="2_7wdii"]
+[ext_resource type="Texture2D" uid="uid://djtuolfsqfna0" path="res://icon.svg" id="2_sedqa"]
+[ext_resource type="FontFile" uid="uid://dplukxog7axuv" path="res://Fonts/doublehomicide/DoubleHomicide.ttf" id="3_rqkbe"]
+
+[node name="Dialogue" type="Control" node_paths=PackedStringArray("text", "name_container", "photo")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 49.0
+offset_right = 27.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gxcoq")
+text = NodePath("Panel/Text")
+name_container = NodePath("Panel/Name")
+photo = NodePath("Panel/Picture")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -1045.0
+offset_top = 286.0
+offset_right = 1085.0
+offset_bottom = 555.0
+
+[node name="Text" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 46.0
+offset_right = 2212.0
+offset_bottom = 248.0
+theme_override_fonts/normal_font = ExtResource("2_7wdii")
+theme_override_fonts/bold_font = ExtResource("3_rqkbe")
+theme_override_font_sizes/normal_font_size = 59
+text = "Test Text, Replace With Code
+"
+visible_characters_behavior = 1
+
+[node name="Name" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 322.0
+offset_bottom = 244.0
+theme_override_fonts/normal_font = ExtResource("2_7wdii")
+theme_override_fonts/bold_font = ExtResource("3_rqkbe")
+theme_override_font_sizes/normal_font_size = 30
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Picture" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 20.0
+offset_right = 272.0
+offset_bottom = 180.0
+texture = ExtResource("2_sedqa")
+expand_mode = 1

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyyyddjgcl2dl"]
+
+[ext_resource type="Texture2D" uid="uid://dig5u7uitrxw8" path="res://Game_World/Entities/NPCS/Blacksmith/Assets/Mayor.png" id="1_3kdvp"]
+[ext_resource type="Script" uid="uid://dcpb7aixx7qhn" path="res://Game_World/Entities/NPCS/Blacksmith/NPC_dialogue_attach.gd" id="1_pspu1"]
+[ext_resource type="Texture2D" uid="uid://bq2adidi54nt2" path="res://Game_World/orange.png" id="2_rif2i"]
+[ext_resource type="Script" uid="uid://b36ijengo53oo" path="res://Game_World/Entities/Resources/NPC_Resources/NPC.gd" id="3_xhmxs"]
+
+[sub_resource type="Resource" id="Resource_724fv"]
+script = ExtResource("3_xhmxs")
+name = "John Smith"
+proffession = "Mayor"
+face = ExtResource("2_rif2i")
+metadata/_custom_type_script = "uid://b36ijengo53oo"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pspu1"]
+size = Vector2(375, 476)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckw71"]
+atlas = ExtResource("1_3kdvp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rif2i"]
+atlas = ExtResource("1_3kdvp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhmxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckw71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rif2i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Elder" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_pspu1")
+data = SubResource("Resource_724fv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.5, 50)
+shape = SubResource("RectangleShape2D_pspu1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_xhmxs")
+autoplay = "default"
+frame_progress = 0.6661267
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -12,6 +12,10 @@ var dialogue = []
 func load_dialogue():
 	name_container.text = data.name
 	photo.texture = data.face
+	if Constants.corrupt_state:
+		name_container.push_bold()
+		text.push_bold()
+		text.text = "MMM, all the flavor..."
 	# dialogue[0] = get_text_file_content(data.dialogue)
 
 func get_text_file_content(filePath):

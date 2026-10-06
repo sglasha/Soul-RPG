@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=3 format=3 uid="uid://dq7ghxple2fei"]
+
+[ext_resource type="Texture2D" uid="uid://dig5u7uitrxw8" path="res://Game_World/Entities/NPCS/Blacksmith/Assets/Mayor.png" id="1_ygg0u"]
+[ext_resource type="Script" uid="uid://b36ijengo53oo" path="res://Game_World/Entities/Resources/NPC_Resources/NPC.gd" id="2_bbcy5"]
+
+[resource]
+script = ExtResource("2_bbcy5")
+name = "Your Mayor"
+proffession = "Mayor"
+face = ExtResource("1_ygg0u")
+metadata/_custom_type_script = "uid://b36ijengo53oo"

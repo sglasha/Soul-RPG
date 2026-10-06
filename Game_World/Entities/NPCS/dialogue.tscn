@@ -32,13 +32,12 @@ offset_bottom = 555.0
 layout_mode = 0
 offset_left = 349.0
 offset_top = 46.0
-offset_right = 2212.0
+offset_right = 2093.0
 offset_bottom = 248.0
 theme_override_fonts/normal_font = ExtResource("2_7wdii")
 theme_override_fonts/bold_font = ExtResource("3_rqkbe")
 theme_override_font_sizes/normal_font_size = 59
-text = "Test Text, Replace With Code
-"
+text = "Please help me tast an orange again, its been years since I've last had one. You can find one in the middle of the forest."
 visible_characters_behavior = 1
 
 [node name="Name" type="RichTextLabel" parent="Panel"]

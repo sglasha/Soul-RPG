@@ -1,16 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyyyddjgcl2dl"]
+[gd_scene load_steps=8 format=3 uid="uid://cyyyddjgcl2dl"]
 
 [ext_resource type="Texture2D" uid="uid://dig5u7uitrxw8" path="res://Game_World/Entities/NPCS/Blacksmith/Assets/Mayor.png" id="1_3kdvp"]
 [ext_resource type="Script" uid="uid://dcpb7aixx7qhn" path="res://Game_World/Entities/NPCS/Blacksmith/NPC_dialogue_attach.gd" id="1_pspu1"]
-[ext_resource type="Texture2D" uid="uid://bq2adidi54nt2" path="res://Game_World/orange.png" id="2_rif2i"]
-[ext_resource type="Script" uid="uid://b36ijengo53oo" path="res://Game_World/Entities/Resources/NPC_Resources/NPC.gd" id="3_xhmxs"]
-
-[sub_resource type="Resource" id="Resource_724fv"]
-script = ExtResource("3_xhmxs")
-name = "John Smith"
-proffession = "Mayor"
-face = ExtResource("2_rif2i")
-metadata/_custom_type_script = "uid://b36ijengo53oo"
+[ext_resource type="Resource" uid="uid://dq7ghxple2fei" path="res://Game_World/Entities/Resources/NPC_Resources/Mayor.tres" id="2_ckw71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pspu1"]
 size = Vector2(375, 476)
@@ -40,8 +32,10 @@ animations = [{
 [node name="Elder" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_pspu1")
-data = SubResource("Resource_724fv")
+data = ExtResource("2_ckw71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5.5, 50)

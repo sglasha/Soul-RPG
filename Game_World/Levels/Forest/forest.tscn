@@ -1,3 +1,126 @@
-[gd_scene format=3 uid="uid://d21qwb2t7oqdo"]
+[gd_scene load_steps=9 format=3 uid="uid://d21qwb2t7oqdo"]
+
+[ext_resource type="Texture2D" uid="uid://bywc60221sfmn" path="res://Game_World/Levels/Forest/Map_2.png" id="1_6renw"]
+[ext_resource type="PackedScene" uid="uid://c6wjb2b40nk0h" path="res://Game_World/Entities/Player/player.tscn" id="2_uukp0"]
+[ext_resource type="PackedScene" uid="uid://cnsu5ft4s4lik" path="res://Game_World/Entities/Creatures/Eye/Eye.tscn" id="3_g5pmh"]
+[ext_resource type="Texture2D" uid="uid://bq2adidi54nt2" path="res://Game_World/orange.png" id="4_hnmvy"]
+[ext_resource type="Script" uid="uid://c4cu4vr533eqi" path="res://Game_World/Levels/Forest/corrupt.gd" id="5_xb6ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5pmh"]
+size = Vector2(205, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb6ak"]
+size = Vector2(1799, 1281)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5cok"]
+size = Vector2(8376.5, 1298)
 
 [node name="Forest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_6renw")
+
+[node name="Player" parent="." instance=ExtResource("2_uukp0")]
+position = Vector2(-900, 2102)
+
+[node name="Creatures" type="Node2D" parent="."]
+
+[node name="Creature" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(1765, 565)
+
+[node name="Creature2" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(-2366, -172)
+
+[node name="Creature3" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(1073, -985)
+
+[node name="Creature4" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(33, -438)
+
+[node name="Creature5" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(529, 1001)
+
+[node name="Creature6" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(-922, -1843)
+
+[node name="Creature9" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(-2005, -1316)
+
+[node name="Creature7" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(-1128, -568)
+
+[node name="Creature8" parent="Creatures" instance=ExtResource("3_g5pmh")]
+position = Vector2(-1477, 811)
+
+[node name="Orange" type="Node2D" parent="."]
+position = Vector2(1000, -1800)
+
+[node name="Sprite2D" type="Sprite2D" parent="Orange"]
+scale = Vector2(5, 5)
+texture = ExtResource("4_hnmvy")
+
+[node name="Area2D" type="Area2D" parent="Orange"]
+script = ExtResource("5_xb6ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange/Area2D"]
+position = Vector2(-7.5, 20)
+shape = SubResource("RectangleShape2D_g5pmh")
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries"]
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(3445, 1555)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(-4070, -2022)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(-4482, -778)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(-4535, 390)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(2653, 2404)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(-4348, 1621)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(3826, 333)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(3193, -2097)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Boundaries/StaticBody2D5"]
+position = Vector2(3569, -890)
+shape = SubResource("RectangleShape2D_xb6ak")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundaries"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2"]
+position = Vector2(-12, 2865)
+shape = SubResource("RectangleShape2D_j5cok")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D4"]
+position = Vector2(-110, -3256)
+shape = SubResource("RectangleShape2D_j5cok")
+
+[connection signal="body_entered" from="Orange/Area2D" to="Orange/Area2D" method="_on_body_entered"]
